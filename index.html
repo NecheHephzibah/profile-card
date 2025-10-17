@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Testable Profile Card - Frontend Wizards Stage 0 Task" />
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <article data-testid="test-profile-card" class="profile-card fade-in">
+      <figure class="avatar">
+        <img src="/images/myProfile.jpg" alt="a picture of me" data-testid="test-user-avatar" />
+      </figure>
+
+      <section class="profile-details">
+        <header> <h2 data-testid="test-user-name">Chinecherem Onovo</h2> </header>
+
+        <p data-testid="test-user-bio" class="bio">
+          I think of myself as a story teller, the designs I create are experiences that speak with intent - they aren't noisy but clean with a minimalistic feel to it.
+          
+        </p>
+
+        <p class="time">
+          Current Time (ms): <span data-testid="test-user-time"></span>
+        </p>
+
+        <nav data-testid="test-user-social-links" class="social-links" aria-label="Social Media Links">
+          <ul>
+            <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">Twitter</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">GitHub</a></li>
+            <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">LinkedIn</a></li>
+          </ul>
+        </nav>
+
+        <section class="list-section">
+          <h3>Hobbies</h3>
+          <ul data-testid="test-user-hobbies">
+            <li>Designing interfaces</li>
+            <li>Exploring new web tech</li>
+            <li>Photography</li>
+          </ul>
+        </section>
+
+        <section class="list-section">
+          <h3>Dislikes</h3>
+          <ul data-testid="test-user-dislikes">
+            <li>Poor documentation</li>
+            <li>Cluttered UIs</li>
+            <li>Unreachable code</li>
+          </ul>
+        </section>
+      </section>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</body>
+</html>
