@@ -87,15 +87,24 @@ body {
 }
 
 /* social media links */
+.social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 .social-links ul {
   list-style: none;
-  padding: 0;
+  padding: 15px 10px 10px 15px;
   display: flex;
   justify-content: center;
   gap: 1.2rem;
   flex-wrap: wrap;
   margin-bottom: 1.5rem;
 }
+
 
 .social-links a {
   color: #2563eb;
