@@ -16,8 +16,8 @@
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  background-color: #f5f7fb;;
+  color: #1f2937;
   margin: 0;
   padding: 2rem;
   display: flex;
@@ -27,18 +27,18 @@ body {
   overflow-x: hidden;
 }
 
-/* ---------- PROFILE CARD ---------- */
+/* profile card styling */
 .profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--card-bg);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow:  0 8px 20px rgba(0, 0, 0, 0.08);
   padding: 2rem;
   max-width: 700px;
   width: 100%;
-  transition: var(--transition);
+  transition: all 0.3s ease;
   position: relative;
 }
 
@@ -47,7 +47,7 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* ---------- AVATAR ---------- */
+/* avatar image */
 .avatar {
   position: relative;
 }
@@ -57,11 +57,10 @@ body {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid var(--primary-color);
+  border: 4px solid gray;
   animation: pulse-border 2s infinite ease-in-out;
 }
 
-/* ---------- PROFILE DETAILS ---------- */
 .profile-details {
   text-align: center;
   margin-top: 1.5rem;
@@ -74,7 +73,7 @@ body {
 }
 
 .bio {
-  color: var(--muted-color);
+  color: #6b7280;
   line-height: 1.6;
   margin-bottom: 1rem;
   max-width: 90%;
@@ -84,10 +83,10 @@ body {
 .time {
   font-weight: 500;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: #1f2937;
 }
 
-/* ---------- SOCIAL LINKS ---------- */
+/* social media links */
 .social-links ul {
   list-style: none;
   padding: 0;
@@ -99,11 +98,11 @@ body {
 }
 
 .social-links a {
-  color: var(--primary-color);
+  color: #2563eb;
   font-weight: 600;
   text-decoration: none;
   position: relative;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .social-links a::after {
@@ -113,7 +112,7 @@ body {
   left: 0;
   height: 2px;
   width: 0%;
-  background-color: var(--primary-color);
+  background-color: #2563eb;
   transition: width 0.3s ease;
 }
 
@@ -122,7 +121,7 @@ body {
   width: 100%;
 }
 
-/* ---------- LIST SECTIONS ---------- */
+/* hobbies section */
 .list-section {
   margin-bottom: 1rem;
 }
@@ -130,7 +129,7 @@ body {
 .list-section h3 {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
+  color: #2563eb;
 }
 
 .list-section ul {
@@ -141,18 +140,6 @@ body {
   display: inline-block;
 }
 
-/* ---------- ANIMATIONS ---------- */
-@keyframes pulse-border {
-  0% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-  }
-}
 
 .fade-in {
   opacity: 0;
@@ -191,19 +178,5 @@ body {
 
   .social-links ul {
     justify-content: flex-start;
-  }
-}
-/* ---------- DARK MODE SUPPORT ---------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #1f2937;
-    --card-bg: #374151;
-    --text-color: #f3f4f6;
-    --muted-color: #9ca3af;
-    --shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  }
-
-  .profile-card:hover {
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
   }
 }
