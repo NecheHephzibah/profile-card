@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Testable Profile Card - Frontend Wizards Stage 0 Task" />
+  <meta name="description" content="Profile Card - Frontend Wizards Stage 1 Task" />
   <title>Profile Card</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!--  Header Navigation (above the card) -->
+  <header class="site-header" aria-label="Main navigation">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active" data-testid="test-nav-home">Home</a></li>
+        <li><a href="about.html" data-testid="test-nav-about">About Me</a></li>
+        <li><a href="contact.html" data-testid="test-nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <main>
     <article data-testid="test-profile-card" class="profile-card fade-in">
       <figure class="avatar">
@@ -15,18 +26,16 @@
       </figure>
 
       <section class="profile-details">
-        <header> <h2 data-testid="test-user-name">Chinecherem Onovo</h2> </header>
+        <header><h2 data-testid="test-user-name">Chinecherem Onovo</h2></header>
 
         <p data-testid="test-user-bio" class="bio">
-          I think of myself as a story teller. The designs I create are experiences that speak with intent. They're not noisy, but clean, with a minimalistic feel.
-     
+          I think of myself as a story teller. The designs I create are experiences that speak with intent.
+          They're not noisy, but clean, with a minimalistic feel.
         </p>
 
         <p class="time">
           Current Time (ms): <span data-testid="test-user-time"></span>
         </p>
-
-       
 
         <nav data-testid="test-user-social-links" class="social-links" aria-label="Social Media Links">
           <ul>
@@ -52,7 +61,6 @@
             <li>Dishonesty</li>
             <li>Routine work</li>
             <li>Crowded or noisy environments</li>
-            
           </ul>
         </section>
       </section>
@@ -60,6 +68,5 @@
   </main>
 
   <script src="script.js"></script>
-</body>
 </body>
 </html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Chinecherem Onovo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="profile-card fade-in contact-container">
+    <section class="contact-align contact-card">
+      <h2>Contact Me</h2>
+
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="contact-name">Full Name</label>
+          <input type="text" id="contact-name" name="name"
+                 data-testid="test-contact-name"
+                 aria-describedby="test-contact-error-name" />
+          <p id="test-contact-error-name" class="error-message"
+             data-testid="test-contact-error-name" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input type="email" id="contact-email" name="email"
+                 data-testid="test-contact-email"
+                 aria-describedby="test-contact-error-email" />
+          <p id="test-contact-error-email" class="error-message"
+             data-testid="test-contact-error-email" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-subject">Subject</label>
+          <input type="text" id="contact-subject" name="subject"
+                 data-testid="test-contact-subject"
+                 aria-describedby="test-contact-error-subject" />
+          <p id="test-contact-error-subject" class="error-message"
+             data-testid="test-contact-error-subject" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="5"
+                    data-testid="test-contact-message"
+                    aria-describedby="test-contact-error-message"></textarea>
+          <p id="test-contact-error-message" class="error-message"
+             data-testid="test-contact-error-message" aria-live="polite"></p>
+        </div>
+
+        <button type="submit" data-testid="test-contact-submit">Send Message</button>
+
+        <p id="test-contact-success"
+           data-testid="test-contact-success"
+           class="success-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
