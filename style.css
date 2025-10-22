@@ -1,4 +1,4 @@
-/* ---------- BASE STYLES ---------- */
+/* ---------- Root Styles ---------- */
 :root {
   --bg-color: #f5f7fb;
   --card-bg: #ffffff;
@@ -8,6 +8,27 @@
   --border-radius: 1rem;
   --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f5f7fb;;
+  color: #1f2937;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+main {
+  margin-top: 100px;
 }
 
 /* styling for the Header nav */
@@ -56,28 +77,6 @@
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* Add padding to push content below fixed nav */
-main {
-  margin-top: 100px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background-color: #f5f7fb;;
-  color: #1f2937;
-  margin: 0;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
 /* profile card styling */
 .profile-card {
   display: flex;
@@ -98,7 +97,7 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* avatar image */
+/* my avatar image */
 .avatar {
   position: relative;
 }
@@ -206,36 +205,15 @@ body {
   }
 }
 
-/* ---------- RESPONSIVENESS ---------- */
-@media (min-width: 768px) {
-  .profile-card {
-    flex-direction: row;
-    align-items: flex-start;
-    text-align: left;
-    padding: 2rem 3rem;
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5);
   }
-
-  .avatar {
-    margin-right: 2rem;
-  }
-
-  .profile-details {
-    margin-top: 0;
-  }
-
-  .bio {
-    margin-inline: 0;
-    max-width: 100%;
-  }
-
-  .social-links ul {
-    justify-content: flex-start;
+  50% {
+    box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
   }
 }
-
-
 /* ===== About Page styles ===== */
-
 
 .header {
   width: 100%;
@@ -280,7 +258,7 @@ body {
 
 /* main about card container */
 main.profile-card {
-  margin-top: 7rem; /* offset for fixed nav */
+  margin-top: 7rem;
   max-width: 800px;
   background: var(--card-bg);
   border-radius: var(--border-radius);
@@ -303,26 +281,6 @@ main.profile-card {
   line-height: 1.7;
   font-size: 1rem;
   margin: 0;
-}
-
-/* responsiveness */
-@media (max-width: 768px) {
-  main.profile-card {
-    padding: 1.5rem;
-    margin-top: 6rem;
-  }
-
-  .about-section h2 {
-    font-size: 1.2rem;
-  }
-
-  .about-section p {
-    font-size: 0.95rem;
-  }
-
-  .nav-links {
-    gap: 1rem;
-  }
 }
 
 
@@ -437,9 +395,155 @@ button[type="submit"]:hover {
 }
 
 
-/* responsive */
-@media (max-width: 768px) {
-  form {
+
+/* ---------- Global Base (mobile-first) ---------- */
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 600px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.profile-details {
+  margin-top: 1rem;
+}
+
+.bio {
+  margin-inline: auto;
+  max-width: 90%;
+}
+
+.contact-card {
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* ---------- Tablet (≥768px) ---------- */
+@media (min-width: 768px) {
+  .profile-card {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 2rem 3rem;
+    max-width: 750px;
+  }
+
+  .avatar {
+    margin-right: 2rem;
+    margin-bottom: 0;
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-details {
+    flex: 1;
+    margin-top: 0;
+  }
+
+  .bio {
+    margin-inline: 0;
+    max-width: 100%;
+  }
+
+  .social-links ul {
+    justify-content: flex-start;
+  }
+
+  .nav-links {
     gap: 1rem;
+  }
+
+  .contact-card {
+    max-width: 700px;
+    padding: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Laptop (≥1024px) ---------- */
+@media (min-width: 1024px) {
+  .profile-card {
+    max-width: 900px;
+    padding: 3rem 4rem;
+  }
+
+  .avatar {
+    width: 160px;
+    height: 160px;
+  }
+
+  .contact-card {
+    max-width: 800px;
+    padding: 2.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-section p {
+    font-size: 1.05rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+
+/* ---------- Desktop (≥1440px) ---------- */
+@media (min-width: 1440px) {
+  .profile-card {
+    max-width: 1100px;
+    padding: 4rem 5rem;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .contact-card {
+    max-width: 900px;
+    padding: 3rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-section p {
+    font-size: 1.1rem;
   }
 }

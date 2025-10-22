@@ -1,9 +1,14 @@
+// Wrapped all functionality inside DOMContentLoaded to ensure the DOM is fully loaded before executing scripts
+
 document.addEventListener("DOMContentLoaded", () => {
+  
+  // time counter in milliseconds
   const timeElement = document.querySelector('[data-testid="test-user-time"]');
   if (timeElement) {
     timeElement.textContent = new Date().getTime();
   }
 
+  // Validation functions for contact form
   const form = document.getElementById("contact-form");
   const successMessage = document.getElementById("test-contact-success");
 
@@ -17,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let valid = true;
 
-    // Name validation
+    // Validates user name
     const nameError = document.getElementById("test-contact-error-name");
     if (!/^[a-zA-Z\s]+$/.test(name)) {
       nameError.textContent = "Please enter a valid name.";
@@ -26,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nameError.textContent = "";
     }
 
-    // Email validation
+    // Validate user email
     const emailError = document.getElementById("test-contact-error-email");
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
       emailError.textContent = "Please enter a valid email address.";
@@ -35,16 +40,16 @@ document.addEventListener("DOMContentLoaded", () => {
       emailError.textContent = "";
     }
 
-    // Subject validation
+    // Validate subject
     const subjectError = document.getElementById("test-contact-error-subject");
-    if (subject.length < 10) {
-      subjectError.textContent = "Subject must be at least 10 characters.";
+    if (subject.length < 3) {
+      subjectError.textContent = "Subject must be at least 3 characters.";
       valid = false;
     } else {
       subjectError.textContent = "";
     }
 
-    // Message validation
+    // Validate message
     const messageError = document.getElementById("test-contact-error-message");
     if (message.length < 10) {
       messageError.textContent = "Message must be at least 10 characters.";
@@ -53,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       messageError.textContent = "";
     }
 
-    // Final success message
+    // If message is valid, show confirmation message
     if (valid) {
       successMessage.textContent = "✅ Message sent successfully!";
       form.reset();
